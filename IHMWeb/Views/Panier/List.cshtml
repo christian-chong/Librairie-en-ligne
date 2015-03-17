@@ -1,0 +1,71 @@
+﻿@using DAL.Models
+@model IEnumerable<DAL.Models.Panier>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ISBN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrixHT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TVA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrixTTC)
+        </th>
+        <th></th>
+    </tr>
+    @{ decimal total = 0;}
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISBN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrixHT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TVA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrixTTC)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |*@
+            @Html.ActionLink("Delete", "Delete", new {id = item.ExemplaireId})
+        </td>
+    </tr>
+    total += item.Quantite*item.PrixTTC;
+}
+    <tr>
+        <th></th><th></th><th></th><th></th>
+        <th>
+            Prix total
+        </th>
+        <td>
+            @total euros
+        </td>
+    </tr>
+</table>
+@Html.ActionLink("Passer commande", "Commande", new { id = SessionCommande.maCommande.Id })

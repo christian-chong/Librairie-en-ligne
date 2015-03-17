@@ -1,0 +1,66 @@
+﻿@using IHMWeb.Controllers
+@using DAL.Models
+
+@model SessionCommande
+
+@{
+    ViewBag.Title = "Votre panier actuel";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nouvelle ligne de commande", "Create","Panier")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISBN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrixHT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TVA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrixTTC)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISBN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrixHT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TVA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrixTTC)
+        </td>
+        <td>
+            @Html.ActionLink("Changer de quantité", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Détails", "Index", "Exemplaires", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

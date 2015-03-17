@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EAF96ECA-33C4-47DC-8F67-316409A52A21}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao.cs" />
+    <Compile Include="DbInitializer.cs" />
+    <Compile Include="LibrairieContext.cs" />
+    <Compile Include="LibrairieInitializer.cs" />
+    <Compile Include="Models\Adresse.cs" />
+    <Compile Include="Models\Appartenir1.cs" />
+    <Compile Include="Models\Appartenir2.cs" />
+    <Compile Include="Models\Auteur.cs" />
+    <Compile Include="Models\ExemplairePrix.cs" />
+    <Compile Include="Models\Panier.cs" />
+    <Compile Include="Models\Partials.cs" />
+    <Compile Include="Models\Aviser.cs" />
+    <Compile Include="Models\CategorieUtilisateur.cs" />
+    <Compile Include="Models\Commande.cs" />
+    <Compile Include="Models\Couter.cs" />
+    <Compile Include="Models\Ecrire.cs" />
+    <Compile Include="Models\Editeur.cs" />
+    <Compile Include="Models\Exemplaire.cs" />
+    <Compile Include="Models\LigneDeCommande.cs" />
+    <Compile Include="Models\Livre.cs" />
+    <Compile Include="Models\ModeDePaiement.cs" />
+    <Compile Include="Models\Modification.cs" />
+    <Compile Include="Models\MotCle.cs" />
+    <Compile Include="Models\Posseder1.cs" />
+    <Compile Include="Models\Prix.cs" />
+    <Compile Include="Models\RechercheMotCle.cs" />
+    <Compile Include="Models\Rubrique.cs" />
+    <Compile Include="Models\SessionCommande.cs" />
+    <Compile Include="Models\StatusDeCommande.cs" />
+    <Compile Include="Models\Tagger.cs" />
+    <Compile Include="Models\Utilisateur.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

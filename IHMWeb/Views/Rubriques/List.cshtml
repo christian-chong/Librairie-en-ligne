@@ -1,0 +1,55 @@
+﻿@*
+    Liste dans rubriques
+    @{
+    ViewBag.Title = "Liste des livres ";
+}
+    *@
+
+@using DAL.Models
+@using GridMvc.Html
+
+@model IEnumerable<Exemplaire>
+
+
+    <br />
+    <div class="row">
+        <div class="col-lg-12">
+            <h2> @ViewBag.Title </h2>
+        </div>
+    </div>
+
+    <div class="row">
+    @foreach (var item in Model)
+        {
+        <div class="col">
+            <div class="col-sm-8 col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <img src="@Html.DisplayFor(modelItem => item.URLimage)" alt="Photo du livre">
+                        <h3>@Html.DisplayFor(modelItem => item.Livre.Titre)</h3>
+                        <p align="left">@Html.DisplayFor(modelItem => item.Livre.Theme)</p>
+                        <p align="left">Editeur: @Html.DisplayFor(modelItem => item.Editeur.Nom)</p>
+                        <p align="left">N° ISBN : @Html.DisplayFor(modelItem => item.ISBN)</p>
+                        <p align="left">Modèle: @Html.DisplayFor(modelItem => item.Type)</p>
+                        <p align="left">Stock : @Html.DisplayFor(modelItem => item.Stock)</p>
+                        <p align="left">Nombre de pages : @Html.DisplayFor(modelItem => item.Pages)</p>
+                        <p align="left">Date de publication : @Html.DisplayFor(modelItem => item.DateEdition)</p>
+                    </div>
+                    <p class="btn btn-primary" role="button">
+                        @Html.ActionLink("Détails", "Details", "Exemplaires", new {id = item.Id}, null)
+                    </p>
+                </div>
+            </div>
+            </div>
+            }
+        </div>
+
+      
+<!-- jQuery -->
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="../../Scripts/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../Scripts/bootstrap.min.js"></script>
+
+
+

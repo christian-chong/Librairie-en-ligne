@@ -1,0 +1,142 @@
+﻿@using DAL
+@using DAL.Models
+@{
+    var context = new LibrairieContext();
+    var exemplaires = context.Exemplaires.Include("Livre");
+
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>@ViewBag.Title - Librairie en ligne : Book Store</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+<!-- Container page -->
+    <div class="container">
+
+        <!-- Barre de navigation -->
+        <div class="row clearfix">
+            <div class="col-xs-12 column">
+                <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand"></a>
+                    </div>
+
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><img src="../../Images/logo.jpg" class="img-responsive" alt="Photo du livre" /></li>
+                            <li>@Html.ActionLink("Accueil", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Nouveautés", "List", "Rubriques", new { rub = Rub.Nouveau }, null)</li>
+                            <li>@Html.ActionLink("Coups de coeur", "List", "Rubriques", new { rub = Rub.CoupDeCoeur }, null)</li>
+                            <li>@Html.ActionLink("Notre catalogue", "List", "Rubriques", new { rub = Rub.Catalog }, null)</li>
+                            <li>@Html.ActionLink("Panier", "List", "Panier")</li>
+                        </ul>
+
+                        @Html.Partial("_LoginPartial")
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+        <!-- /#barre de navigation HAUT -->
+        <!-- /#Container page -->
+        <!-- /#Menu de gauche de navigation -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li>
+                    <form action="" method="post">
+                        <p>
+                            <input type="text" name="motCle" placeholder="Recherche ..." class="form-control"/>
+                        </p>
+                        <p>
+                            <input type="submit" class="btn btn-success marge"/>
+                        </p>
+                    </form>
+                </li>
+            <li> THEMES </li>
+
+                <li>
+                    @foreach (var item in exemplaires.Select(m => m.Livre.Theme).Distinct())
+                    {
+                        @Html.ActionLink(@item, "List", "Themes", new { theme = @item }, null)
+
+                    }
+                </li>
+            </ul>
+        </div>
+            <!-- /#Menu de gauche de navigation -->
+
+             <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-10">
+                            @{
+                                if (IsPost && !MvcApplication.DejaPasser)
+                                {
+                                    Dao dao = new Dao();
+                                    SessionCommande.maRechercheMotCle.MotCle = Request["motCle"];
+                                    MvcApplication.DejaPasser = true;
+                                    SessionCommande.maRechercheMotCle.MaListExemplaires
+                                        = dao.RechercheExemplaireMotCle(SessionCommande.maRechercheMotCle.MotCle);
+                                    if (SessionCommande.maRechercheMotCle.MaListExemplaires.Count != 0)
+                                    {
+                                        //Response.Redirect(Url.Action("Details", new { id = Model.ID }));
+                                        Response.Redirect(Url.Action("List", "Themes", new { theme = Theme.Recherche }));
+
+                                        //Html.RenderAction("List", "Themes", new { theme = Theme.Recherche });
+                                    }
+                                }
+                                MvcApplication.DejaPasser = false;
+                            }
+                            
+                            @RenderBody()
+
+
+                            <!-- Footer -->
+                            <footer>
+                                <hr/>
+                                <div id="footer">&copy; @DateTime.Now.Year - BOOKSTORE</div>
+                                <div>81 Boulevard Arago 92000 Nanterre</div>
+                                <div>
+                                    <div class ="col-md-offset-4">
+                                        <ul class="nav navbar-nav text-center">
+                                            <li>@Html.ActionLink("Ventes & livraisons", "Cgv", "Home")</li>
+                                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </footer>
+                            <!-- /#Footer -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /#page-content -->
+
+        </div>
+        <!-- /#page-container -->
+
+<!-- Scripts -->
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/gridmvc")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+        <!-- /#Scripts -->
+    </body>
+    </html>

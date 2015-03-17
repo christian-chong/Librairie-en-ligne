@@ -1,0 +1,32 @@
+﻿@using DAL
+@using DAL.Models
+
+@{
+    ViewBag.Title = "Commande";
+}
+
+
+@{
+    Dao dao = new Dao();
+
+    SessionCommande.maRechercheMotCle = new RechercheMotCle();
+    SessionCommande.currentUtilisateur = dao.FindUtilisateur(1); // Utilisateur avec Id = 1 ;
+    SessionCommande.currentModeDePaiement = dao.FindModeDePaiement(1); // Mode de Paiement avec carte bleue Id = 1 ;
+    SessionCommande.currentStatusDeCommande = dao.FindStatusDeCommande(1); // Status de Commande avec Id = 1 : En cours de validation;
+    SessionCommande.maCommande = new Commande
+    {
+        UtilisateurId = SessionCommande.currentUtilisateur.Id,
+        ModeDePaiementId = SessionCommande.currentModeDePaiement.Id,
+        StatutDeCommandeId = SessionCommande.currentStatusDeCommande.Id,
+        Date = DateTime.Now
+    };
+
+    dao.CreateCommande(SessionCommande.maCommande);
+}
+
+
+
+
+<h2>Commande </h2>
+
+<h3>Commande validée </h3>

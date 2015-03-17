@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="carousel slide" id="carousel-7615">
+    <ol class="carousel-indicators">
+        <li class="active" data-slide-to="0" data-target="#carousel-7615">
+        </li>
+        <li data-slide-to="1" data-target="#carousel-7615">
+        </li>
+        <li data-slide-to="2" data-target="#carousel-7615">
+        </li>
+    </ol>
+    <div class="carousel-inner">
+       
+        <div class="item active">
+            <img alt="Médecine" src="..//..//Images/medical.jpg">
+            <div class="carousel-caption">
+                <h4>
+                    Médecine
+                </h4>
+                <p>
+                    Retrouvez livres, revues, e-books en médecine générale pour vous accompagner dans le diagnostic.
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <img alt="Nature" src="..//..//Images/nature.jpg">
+            <div class="carousel-caption">
+                <h4>
+                    Nature
+                </h4>
+                <p>
+                    Des guides pour découvrir les milieux naturels: fleurs, arbres, plantes, champignons, oiseaux, insectes, ...
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <img alt="Cusine" src="..//..//Images//cuisine.jpg">
+            <div class="carousel-caption">
+                <h4>
+                    Cuisine
+                </h4>
+                <p>
+                    Bookstore a sélectionné pour vous des livres de Cuisine et vins de qualité, des milliers de livres disponibles !
+                </p>
+            </div>
+        </div>
+    </div> <a class="left carousel-control" href="#carousel-7615" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-7615" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+
+
+<div class="jumbotron">
+    <h2>Librairie en ligne / Book Store</h2>
+    <p class="lead">Les livres que vous achetez en ligne sont mis à disposition dans l'une de nos librairies partenaires en France et en Belgique et livrés directement aux internautes à l'étranger. Une démarche collective et mutualiste de la librairie indépendante.</p>
+    <p class="btn btn-primary btn-lg"> @Html.ActionLink("En savoir plus... ", "Contact", "Home")</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Nos nouveautés !</h2>
+        <p>
+            Pour ne rien manquer des nouveautés qui marquent l'actualité littéraire, BOOKSTORE a sélectionné pour vous les dernières parutions du trimestre.
+        </p>
+        <p class="btn btn-primary btn-lg"> @Html.ActionLink("En savoir plus...", "List", "Rubriques", new { rub = Rub.Nouveau }, null)</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Catalogue en ligne</h2>
+        <p>Si vous souhaitez orienter vos recherches selon vos goûts, retrouvez alors nos sélections spécifiques : polars, BD, essais, romans, poches, jeunesse !</p>
+        <p class="btn btn-primary btn-lg"> @Html.ActionLink("En savoir plus...", "List", "Rubriques", new { rub = Rub.Catalog }, null)</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Nos coups de coeur</h2>
+        <p> L'équipe BOOKSTORE propose une sélection de romans et d'essais, propres à satisfaire les plus vives envies de lecture.</p>
+        <p class="btn btn-primary btn-lg">@Html.ActionLink("En savoir plus...", "List", "Rubriques", new { rub = Rub.CoupDeCoeur }, null)</p>
+    </div>
+</div>
+

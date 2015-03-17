@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Liste";
+}
+@using GridMvc.Html
+
+@model IEnumerable<DAL.Models.Livre>
+
+<h2>Liste des livres </h2>
+
+<br/>
+
+@Html.Grid(Model).Columns(
+                               col =>
+                               {
+                                   col.Add(p => p.Titre).Filterable(true);
+                                   col.Add(p => p.SousTitre).Sortable(true);
+                                   col.Add(p => p.Theme).Filterable(true);
+                                   col.Add(p => p.Resume);
+                                   col.Add()
+                                       .Sanitized(false)
+                                       .Encoded(false)
+                                       .RenderValueAs(p => @Html.ActionLink("Editer", "Edit", "Livre", new { id = p.Id }));
+                               }
+                            ).WithPaging(4)

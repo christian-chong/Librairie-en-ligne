@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3E4B36F6-58F6-4889-BF30-85C73F5A1E5F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IHMBackOffice</RootNamespace>
+    <AssemblyName>IHMBackOffice</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Christian\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E090616570E496DB4C192180513EA9F0DE5F3061</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>IHMBackOffice_CléTemporaire.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accueil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accueil.Designer.cs">
+      <DependentUpon>Accueil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\DetailsStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\DetailsStatus.Designer.cs">
+      <DependentUpon>DetailsStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\AjouterCommande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\AjouterCommande.Designer.cs">
+      <DependentUpon>AjouterCommande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\DetailsModeDePaiement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\DetailsModeDePaiement.Designer.cs">
+      <DependentUpon>DetailsModeDePaiement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\TableDesCommandes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\TableDesCommandes.Designer.cs">
+      <DependentUpon>TableDesCommandes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\TableDesHistoriquesClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\TableDesHistoriquesClients.Designer.cs">
+      <DependentUpon>TableDesHistoriquesClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\TableDesStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\TableDesStatus.Designer.cs">
+      <DependentUpon>TableDesStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\TableModeDePaiement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\TableModeDePaiement.Designer.cs">
+      <DependentUpon>TableModeDePaiement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\DetailsStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\DetailsStock.Designer.cs">
+      <DependentUpon>DetailsStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\TableExemplairePrix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\TableExemplairePrix.Designer.cs">
+      <DependentUpon>TableExemplairePrix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\DetailsPrix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionAchatsVentes\DetailsPrix.Designer.cs">
+      <DependentUpon>DetailsPrix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionOuvrages\DetailsExemplaireLivre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionOuvrages\DetailsExemplaireLivre.Designer.cs">
+      <DependentUpon>DetailsExemplaireLivre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionOuvrages\DetailsLivre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionOuvrages\DetailsLivre.Designer.cs">
+      <DependentUpon>DetailsLivre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionOuvrages\DetailsAuteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionOuvrages\DetailsAuteur.Designer.cs">
+      <DependentUpon>DetailsAuteur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionOuvrages\DetailsMotCle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionOuvrages\DetailsMotCle.Designer.cs">
+      <DependentUpon>DetailsMotCle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionOuvrages\DetailsRubrique.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionOuvrages\DetailsRubrique.Designer.cs">
+      <DependentUpon>DetailsRubrique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionOuvrages\EditExemplaireLivre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionOuvrages\EditExemplaireLivre.Designer.cs">
+      <DependentUpon>EditExemplaireLivre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionOuvrages\TableDesAuteurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionOuvrages\TableDesAuteurs.Designer.cs">
+      <DependentUpon>TableDesAuteurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionOuvrages\TableDesLivres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionOuvrages\TableDesLivres.Designer.cs">
+      <DependentUpon>TableDesLivres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionOuvrages\TableDesMotsCles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionOuvrages\TableDesMotsCles.Designer.cs">
+      <DependentUpon>TableDesMotsCles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionOuvrages\TableDesRubriques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionOuvrages\TableDesRubriques.Designer.cs">
+      <DependentUpon>TableDesRubriques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Accueil.resx">
+      <DependentUpon>Accueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionAchatsVentes\DetailsStatus.resx">
+      <DependentUpon>DetailsStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionAchatsVentes\AjouterCommande.resx">
+      <DependentUpon>AjouterCommande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionAchatsVentes\DetailsModeDePaiement.resx">
+      <DependentUpon>DetailsModeDePaiement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionAchatsVentes\TableDesCommandes.resx">
+      <DependentUpon>TableDesCommandes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionAchatsVentes\TableDesHistoriquesClients.resx">
+      <DependentUpon>TableDesHistoriquesClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionAchatsVentes\TableDesStatus.resx">
+      <DependentUpon>TableDesStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionAchatsVentes\TableModeDePaiement.resx">
+      <DependentUpon>TableModeDePaiement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionAchatsVentes\DetailsStock.resx">
+      <DependentUpon>DetailsStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionAchatsVentes\TableExemplairePrix.resx">
+      <DependentUpon>TableExemplairePrix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionAchatsVentes\DetailsPrix.resx">
+      <DependentUpon>DetailsPrix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionOuvrages\DetailsExemplaireLivre.resx">
+      <DependentUpon>DetailsExemplaireLivre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionOuvrages\DetailsLivre.resx">
+      <DependentUpon>DetailsLivre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionOuvrages\DetailsAuteur.resx">
+      <DependentUpon>DetailsAuteur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionOuvrages\DetailsMotCle.resx">
+      <DependentUpon>DetailsMotCle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionOuvrages\DetailsRubrique.resx">
+      <DependentUpon>DetailsRubrique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionOuvrages\EditExemplaireLivre.resx">
+      <DependentUpon>EditExemplaireLivre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionOuvrages\TableDesAuteurs.resx">
+      <DependentUpon>TableDesAuteurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionOuvrages\TableDesLivres.resx">
+      <DependentUpon>TableDesLivres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionOuvrages\TableDesMotsCles.resx">
+      <DependentUpon>TableDesMotsCles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionOuvrages\TableDesRubriques.resx">
+      <DependentUpon>TableDesRubriques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="IHMBackOffice_CléTemporaire.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\DAL.Models.Auteur.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Commande.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Editeur.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Exemplaire.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.LigneDeCommande.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Livre.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.ModeDePaiement.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.MotCle.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Panier.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Prix.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Rubrique.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.StatusDeCommande.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Utilisateur.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{eaf96eca-33c4-47dc-8f67-316409a52a21}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GestionUtilisateurs\" />
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

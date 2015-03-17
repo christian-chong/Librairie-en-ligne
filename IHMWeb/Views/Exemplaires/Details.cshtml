@@ -1,0 +1,95 @@
+﻿@using DAL.Models
+
+
+@*@{
+    ViewBag.Title = "Details";
+}*@
+
+<h2>Details</h2>
+
+<div>
+    <h4>Exemplaire</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => SessionCommande.currentExemplaire.Editeur.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => SessionCommande.currentExemplaire.Editeur.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => SessionCommande.currentExemplaire.Livre.Titre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => SessionCommande.currentExemplaire.Livre.Titre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => SessionCommande.currentExemplaire.ISBN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => SessionCommande.currentExemplaire.ISBN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => SessionCommande.currentExemplaire.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => SessionCommande.currentExemplaire.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => SessionCommande.currentExemplaire.Stock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => SessionCommande.currentExemplaire.Stock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => SessionCommande.currentExemplaire.Pages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => SessionCommande.currentExemplaire.Pages)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => SessionCommande.currentExemplaire.DateEdition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => SessionCommande.currentExemplaire.DateEdition)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => SessionCommande.currentPrix.PrixHT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => SessionCommande.currentPrix.PrixHT)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => SessionCommande.currentPrix.TVA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => SessionCommande.currentPrix.TVA)
+        </dd>
+
+
+
+
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Ajouter au panier", "Quantite", "Panier") |
+    @Html.ActionLink("Retour à la liste de tous les livres", "List", "Rubriques", new { rub = Rub.Catalog }, null)
+</p>

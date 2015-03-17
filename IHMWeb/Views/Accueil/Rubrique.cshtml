@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Rubrique";
+}
+
+@using GridMvc.Html
+
+@model IEnumerable<DAL.Models.Rubrique>
+<h2>Rubriques</h2>
+
+<br/>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Nom</th>
+    </tr>
+
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Nom</td>
+        </tr>
+    }
+</table>
+
+
+@*
+
+
+        @Html.Grid(Model).Columns(
+                                    col =>
+                                    {
+                                        col.Add(rubrique => rubrique.Nom);
+                                        //col.Add()
+                                          //  .Sanitized(false)
+                                            //.Encoded(false);
+                                        // .RenderValueAs(p => Html.ActionLink("Editer", "Edit", new { id = p.Id }));
+                                    }
+                                  ).WithPaging(5)*@
